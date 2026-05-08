@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario - Valor del Acompañamiento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Cuestionario para recoger datos para informe: Valor del Acompañamiento</h1>
+        
+        <form action="https://formspree.io/f/mrejlwlb" method="POST" id="acompanamientoForm">
+            
+            <fieldset>
+                <legend>1. Datos Generales y Perfil</legend>
+                
+                <div class="form-group">
+                    <label for="num_atendidas">Número aproximado de personas atendidas:</label>
+                    <input type="number" id="num_atendidas" name="num_atendidas" required>
+                </div>
+
+                <h3>Perfil de las personas atendidas</h3>
+                
+                <div class="form-group">
+                    <label for="rango_edad">Rangos de edad del IRPF (especificar datos):</label>
+                    <textarea id="rango_edad" name="rango_edad" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="genero">Por género (especificar desglose):</label>
+                    <textarea id="genero" name="genero" rows="2"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="nacionalidad">Nacionalidad (Español/Extranjero):</label>
+                    <textarea id="nacionalidad" name="nacionalidad" rows="2"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Empadronamiento (Indicar Sí/No, Número y Porcentaje):</label>
+                    <textarea id="empadronamiento" name="empadronamiento" rows="2"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Situación administrativa (Irregular/Regular):</label>
+                    <textarea id="situacion_admin" name="situacion_admin" rows="2"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>2. Servicios Sociales</legend>
+                
+                <div class="form-group">
+                    <label for="ss_atendidas">De las personas que acompañamos, ¿cuántas y qué porcentaje son atendidas por Servicios Sociales?</label>
+                    <textarea id="ss_atendidas" name="ss_atendidas" rows="2"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="ss_intensidad">¿Qué número y porcentaje valoras tú que han tenido una relación intensa el último año con Servicios Sociales?</label>
+                    <textarea id="ss_intensidad" name="ss_intensidad" rows="2"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>3. Itinerarios de Acompañamiento Social</legend>
+                
+                <div class="form-group">
+                    <label for="itinerario_beneficiados">¿Cuántas de estas se han beneficiado de un itinerario de acompañamiento social?</label>
+                    <input type="number" id="itinerario_beneficiados" name="itinerario_beneficiados">
+                </div>
+
+                <h3>Duración media de los itinerarios por rango (Indicar cantidades):</h3>
+                <div class="form-group">
+                    <label for="duracion_menos3">Menos de tres meses:</label>
+                    <input type="text" id="duracion_menos3" name="duracion_menos3">
+                </div>
+                <div class="form-group">
+                    <label for="duracion_3a6">Entre 3 y 6 meses:</label>
+                    <input type="text" id="duracion_3a6" name="duracion_3a6">
+                </div>
+                <div class="form-group">
+                    <label for="duracion_6a12">Entre 6 y 12 meses:</label>
+                    <input type="text" id="duracion_6a12" name="duracion_6a12">
+                </div>
+                <div class="form-group">
+                    <label for="duracion_mas1">Más de un año:</label>
+                    <input type="text" id="duracion_mas1" name="duracion_mas1">
+                </div>
+                <div class="form-group">
+                    <label for="duracion_intermitente">Intermitente (hay interrupciones):</label>
+                    <input type="text" id="duracion_intermitente" name="duracion_intermitente">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>4. Áreas de Actuación</legend>
+                <p><em>Indica las áreas en las que actúen. Si respondes "No", no es necesario rellenar los datos de esa área.</em></p>
+
+                <div class="area-section">
+                    <label>¿Trabajas en el área de Salud?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="trabaja_salud" value="si" class="area-toggle" data-target="detalle_salud"> Sí</label>
+                        <label><input type="radio" name="trabaja_salud" value="no" class="area-toggle" data-target="detalle_salud" checked> No</label>
+                    </div>
+                    <div id="detalle_salud" class="area-details hidden">
+                        <label>Indica de las personas totales atendidas, el número y el porcentaje del total que se ha beneficiado en esta área:</label>
+                        <textarea name="datos_salud" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <div class="area-section">
+                    <label>¿Trabajas en el área de Formación?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="trabaja_formacion" value="si" class="area-toggle" data-target="detalle_formacion"> Sí</label>
+                        <label><input type="radio" name="trabaja_formacion" value="no" class="area-toggle" data-target="detalle_formacion" checked> No</label>
+                    </div>
+                    <div id="detalle_formacion" class="area-details hidden">
+                        <label>Indica número y porcentaje:</label>
+                        <textarea name="datos_formacion" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <div class="area-section">
+                    <label>¿Trabajas en el área de Empleo?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="trabaja_empleo" value="si" class="area-toggle" data-target="detalle_empleo"> Sí</label>
+                        <label><input type="radio" name="trabaja_empleo" value="no" class="area-toggle" data-target="detalle_empleo" checked> No</label>
+                    </div>
+                    <div id="detalle_empleo" class="area-details hidden">
+                        <label>Indica número y porcentaje (Ej: un 12% obtuvo empleo):</label>
+                        <textarea name="datos_empleo" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <div class="area-section">
+                    <label>¿Trabajas en el área de Vivienda?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="trabaja_vivienda" value="si" class="area-toggle" data-target="detalle_vivienda"> Sí</label>
+                        <label><input type="radio" name="trabaja_vivienda" value="no" class="area-toggle" data-target="detalle_vivienda" checked> No</label>
+                    </div>
+                    <div id="detalle_vivienda" class="area-details hidden">
+                        <label>Indica número y porcentaje (Ej: un 4% vivienda):</label>
+                        <textarea name="datos_vivienda" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <div class="area-section">
+                    <label>¿Trabajas en el área de Apoyo administrativo?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="trabaja_admin" value="si" class="area-toggle" data-target="detalle_admin"> Sí</label>
+                        <label><input type="radio" name="trabaja_admin" value="no" class="area-toggle" data-target="detalle_admin" checked> No</label>
+                    </div>
+                    <div id="detalle_admin" class="area-details hidden">
+                        <label>Indica número y porcentaje (permiso de residencia/trabajo, empadronamiento, etc.):</label>
+                        <textarea name="datos_admin" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <div class="area-section">
+                    <label>¿Trabajas en otras áreas?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="trabaja_otros" value="si" class="area-toggle" data-target="detalle_otros"> Sí</label>
+                        <label><input type="radio" name="trabaja_otros" value="no" class="area-toggle" data-target="detalle_otros" checked> No</label>
+                    </div>
+                    <div id="detalle_otros" class="area-details hidden">
+                        <label>Especifica el área, número y porcentaje:</label>
+                        <textarea name="datos_otros" rows="2"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>5. Prestaciones</legend>
+                
+                <div class="form-group">
+                    <label>Aproximadamente, ¿qué porcentaje de estos participantes han accedido a alguna prestación gracias al acompañamiento de las entidades sociales (que no lo tenían previamente)?</label>
+                    <select name="porcentaje_acceso_prestacion">
+                        <option value="">Selecciona un rango...</option>
+                        <option value="0-25%">0-25%</option>
+                        <option value="25-50%">25-50%</option>
+                        <option value="50-75%">50-75%</option>
+                        <option value="75-100%">75-100%</option>
+                        <option value="no-procede">No procede (no se aplica)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios_prestaciones">Comenta a qué prestaciones te estás refiriendo o añade cualquier comentario que estimes importante (nos referimos a todas las prestaciones):</label>
+                    <textarea id="comentarios_prestaciones" name="comentarios_prestaciones" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="porcentaje_fuera_prestacion">¿Qué porcentaje de estos participantes se están quedando fuera de ninguna prestación?</label>
+                    <input type="text" id="porcentaje_fuera_prestacion" name="porcentaje_fuera_prestacion">
+                </div>
+
+                <div class="form-group">
+                    <label>¿Cuáles son las principales razones por las que tú crees que no están accediendo a una prestación?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="razones_noprestacion[]" value="empadronamiento"> Falta de empadronamiento o antigüedad insuficiente</label>
+                        <label><input type="checkbox" name="razones_noprestacion[]" value="irregular"> Situación administrativa irregular</label>
+                        <label><input type="checkbox" name="razones_noprestacion[]" value="informacion"> Falta de información o dificultades para tramitar</label>
+                        <label><input type="checkbox" name="razones_noprestacion[]" value="tiempos"> Tiempos de espera excesivos</label>
+                        <label><input type="checkbox" name="razones_noprestacion[]" value="requisitos"> Requisitos económicos o familiares no cumplidos</label>
+                        <label><input type="checkbox" name="razones_noprestacion[]" value="otros"> Otros (especificar abajo)</label>
+                    </div>
+                    <textarea name="razones_noprestacion_otros" rows="2" placeholder="Especificar otros motivos..."></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>6. RMI e IMV</legend>
+                
+                <div class="form-group">
+                    <label for="datos_rmi">¿Cuántas personas y qué porcentaje reciben la RMI en el 2025; y cuántas la recibían en el 2020?</label>
+                    <textarea id="datos_rmi" name="datos_rmi" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="datos_imv">¿Cuántas personas y qué porcentaje de participantes reciben el IMV en el 2025? (Valorar cuántas personas hemos asesorado en el proceso)</label>
+                    <textarea id="datos_imv" name="datos_imv" rows="3"></textarea>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="submit-btn">Enviar Cuestionario</button>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
